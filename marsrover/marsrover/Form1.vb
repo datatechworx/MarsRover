@@ -48,6 +48,10 @@ Public Class Form1
             Dim plateaulimit As New limit
             Dim marsdirection As Char = marsrover.direction
             Dim roverdirection As Integer = 0
+
+            Dim roverA As String = String.Empty
+            'Dim roverB As String = String.Empty
+
             TextBoxOutput.Text = String.Empty
             Application.DoEvents()
             'get input from textbox
@@ -111,14 +115,51 @@ Public Class Form1
                                     End Select
 
                                     'TODO: test coordinate parameters 0,0 to 5,5 bound limits
-                                    If marsrover.positionX < 0 Then MsgBox("Minimum X coordinate exceed plateau limit") : Exit Sub
-                                    If plateaulimit.limitY < 0 Then MsgBox("Minimum Y coordinate exceed plateau limit") : Exit Sub
-                                    If marsrover.positionX > plateaulimit.limitX Then MsgBox("Maximum X coordinate exceed plateau limit") : Exit Sub
-                                    If marsrover.positionY > plateaulimit.limitY Then MsgBox("Maximum Y coordinate exceed plateau limit") : Exit Sub
+                                    If marsrover.positionX < 0 Then
+                                        MsgBox("Minimum X coordinate exceed plateau limit")
+                                        Exit Sub
+                                    End If
+                                    If plateaulimit.limitY < 0 Then
+                                        MsgBox("Minimum Y coordinate exceed plateau limit")
+                                        Exit Sub
+                                    End If
+                                    If marsrover.positionX > plateaulimit.limitX Then
+                                        MsgBox("Maximum X coordinate exceed plateau limit")
+                                        Exit Sub
+                                    End If
+                                    If marsrover.positionY > plateaulimit.limitY Then
+                                        MsgBox("Maximum Y coordinate exceed plateau limit")
+                                        Exit Sub
+                                    End If
                             End Select
                             marsrover.direction = marsdirection
                         Next
                         TextBoxOutput.Text = TextBoxOutput.Text & Environment.NewLine & marsrover.positionX & " " & marsrover.positionY & " " & marsrover.direction
+
+                        'PLATEAU COORDINATES 0,0 - 5,5 
+                        If plateaulimit.limitX = 5 And plateaulimit.limitY = 5 Then
+                            Try
+                                roverbuttonA.Visible = True
+                                roverButtonB.Visible = True
+                                If String.IsNullOrEmpty(roverA) Then
+                                    roverA = "A"
+                                    TableLayoutPanel1.SetColumn(roverbuttonA, (marsrover.positionX) - 1)
+                                    TableLayoutPanel1.SetRow(roverbuttonA, (4 - marsrover.positionY) + 1)
+                                    roverbuttonA.Text = marsrover.direction
+                                Else
+                                    'roverB = "B"
+                                    TableLayoutPanel1.SetColumn(roverButtonB, (marsrover.positionX) - 1)
+                                    TableLayoutPanel1.SetRow(roverButtonB, (4 - marsrover.positionY) + 1)
+                                    roverButtonB.Text = marsrover.direction
+                                End If
+                            Catch ex As Exception
+
+                            End Try
+                        Else
+                            roverbuttonA.Visible = False
+                            roverButtonB.Visible = False
+                        End If
+
                         Console.WriteLine()
                         Application.DoEvents()
                     End If
@@ -138,6 +179,15 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         TextBoxTravel.Text = String.Empty
         TextBoxOutput.Text = String.Empty
+
+
+        TableLayoutPanel1.SetColumn(roverbuttonA, 0)
+        TableLayoutPanel1.SetRow(roverbuttonA, 4)
+        roverbuttonA.Text = "A"
+
+        TableLayoutPanel1.SetColumn(roverButtonB, 4)
+        TableLayoutPanel1.SetRow(roverButtonB, 0)
+        roverButtonB.Text = "B"
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
