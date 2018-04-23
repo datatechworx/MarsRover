@@ -1,0 +1,12 @@
+C:\Users\Chris\Documents\Visual Studio 2017\Projects\marsrover\marsrover\bin\Debug\marsrover.exe.config
+C:\Users\Chris\Documents\Visual Studio 2017\Projects\marsrover\marsrover\bin\Debug\marsrover.exe
+C:\Users\Chris\Documents\Visual Studio 2017\Projects\marsrover\marsrover\bin\Debug\marsrover.pdb
+C:\Users\Chris\Documents\Visual Studio 2017\Projects\marsrover\marsrover\bin\Debug\marsrover.xml
+C:\Users\Chris\Documents\Visual Studio 2017\Projects\marsrover\marsrover\obj\Debug\marsrover.Form1.resources
+C:\Users\Chris\Documents\Visual Studio 2017\Projects\marsrover\marsrover\obj\Debug\marsrover.Resources.resources
+C:\Users\Chris\Documents\Visual Studio 2017\Projects\marsrover\marsrover\obj\Debug\marsrover.vbproj.GenerateResource.Cache
+C:\Users\Chris\Documents\Visual Studio 2017\Projects\marsrover\marsrover\obj\Debug\marsrover.vbproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\Visual Studio 2017\Projects\marsrover\marsrover\obj\Debug\marsrover.exe
+C:\Users\Chris\Documents\Visual Studio 2017\Projects\marsrover\marsrover\obj\Debug\marsrover.xml
+C:\Users\Chris\Documents\Visual Studio 2017\Projects\marsrover\marsrover\obj\Debug\marsrover.pdb
+C:\Users\Chris\Documents\Visual Studio 2017\Projects\marsrover\marsrover\obj\Debug\marsrover.vbprojResolveAssemblyReference.cache
